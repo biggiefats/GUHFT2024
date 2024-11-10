@@ -246,7 +246,7 @@ def main():
         # Display heatmap using st.dataframe with custom styling
         st.dataframe(
             heatmap_df.style
-            .background_gradient(cmap='YlOrRd')
+            .background_gradient(cmap='PuBu')
             .format("{:.2%}")
             .set_properties(**{'width': '100px'})
             .set_caption("Spending Intensity (% of maximum daily spending)"),
