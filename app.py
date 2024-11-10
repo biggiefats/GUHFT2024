@@ -27,9 +27,15 @@ class ExpenseTracker:
             self.save_data()
 
     def save_data(self):
+        """
+        Save the Pandas dataframe to the CSV file.
+        """
         self.df.to_csv(self.csv_path, index=False)
 
     def add_expense(self, name, cost, rate, priority, day, month):
+        """
+        Adding an expense to the dataframe.
+        """
         new_expense = pd.DataFrame([{
             'name': name,
             'cost': cost,
@@ -42,6 +48,9 @@ class ExpenseTracker:
         self.save_data()
 
     def remove_expense(self, name, day, month):
+        """
+        Remove expenses from the data.
+        """
         self.df = self.df[~((self.df['name'] == name) & 
                            (self.df['day'] == day) & 
                            (self.df['month'] == month))]
@@ -61,21 +70,24 @@ class ExpenseTracker:
         popularday = int()
         chance = float()
 
+        # get days and frequencys that they have
         day_counts = defaultdict(int)
         for i in range(len(self.df)):
             day = self.df['day'].iat[i]
             day_counts[str(day)] += 1
 
+        # find the highest frequency day - not the best option but I don't want to do another way 
         for day in range(len(day_counts.keys())):
             freq = day_counts[str(day)] 
             max_freq = max(max_freq, freq)
             if max_freq == freq:
                 popularday = day
 
+        # Analysis
         if len(self.df) > 0:  # Only perform analysis if there's data
             X = self.df[['cost','day','month']]
             y = self.df['day'].apply(lambda x: 1 if x == popularday else 0)
-
+            
             X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False, train_size=0.7)
             
             model = LogisticRegression(solver='liblinear', random_state=0)
@@ -83,7 +95,8 @@ class ExpenseTracker:
             y_predicted = model.predict(X_test)
             chance = round(accuracy_score(y_test, y_predicted) * 100)
         else:
-            popularday = 1  # Default to Monday if no data
+            # Default case, where no data is made
+            popularday = 1
             chance = 0
 
         return popularday, chance
