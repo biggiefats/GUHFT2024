@@ -303,7 +303,27 @@ def main():
                 else:
                     st.error("Please fill all fields")
         pass
-    
+
+        # Monthly summary and user form in sidebar
+    with st.sidebar:
+        # User Information Form
+        st.subheader("👤 User Information")
+        with st.form("user_info_form"):
+            first_name = st.text_input("First Name")
+            last_name = st.text_input("Last Name")
+            email = st.text_input("Email Address")
+            
+            if st.form_submit_button("Submit"):
+                if first_name and last_name and email:
+                    if '@' in email and '.' in email:  # Basic email validation
+                        st.success(f"Welcome, {first_name}! Your information has been recorded.")
+                    else:
+                        st.error("Please enter a valid email address.")
+                else:
+                    st.error("Please fill in all fields.")
+        
+        st.divider()  # Add a visual separator
+        
     # Show selected day's expenses with improved deletion handling
     if hasattr(st.session_state, 'selected_day'):
         day = st.session_state.selected_day
