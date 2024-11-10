@@ -1,141 +1,137 @@
 name,cost,rate,priority,day,month
 Rent,1500.0,M,H,1,1
-Electricity,120.0,M,H,5,1
+Gym Membership,50.0,M,M,1,1
+Electricity,114.98,M,H,5,1
 Internet,60.0,M,M,5,1
 Phone Bill,45.0,M,M,6,1
+Groceries,240.96,W,H,7,1
+Groceries,232.96,W,H,14,1
 Netflix,15.99,M,L,15,1
-Gym Membership,50.0,M,M,1,1
-Groceries,200.0,W,H,7,1
-Groceries,180.0,W,H,14,1
-Groceries,220.0,W,H,21,1
-Groceries,190.0,W,H,28,1
-Coffee,4.5,D,L,1,1
-Lunch,12.0,D,M,3,1
-Gas,45.0,W,M,8,1
+Groceries,206.4,W,H,21,1
+Groceries,206.4,W,H,28,1
 Rent,1500.0,M,H,1,2
-Electricity,115.0,M,H,5,2
+Gym Membership,50.0,M,M,1,2
+Electricity,102.32,M,H,5,2
 Internet,60.0,M,M,5,2
 Phone Bill,45.0,M,M,6,2
-Netflix,15.99,M,L,15,2
-Gym Membership,50.0,M,M,1,2
-Groceries,210.0,W,H,7,2
-Groceries,195.0,W,H,14,2
-Groceries,205.0,W,H,21,2
-Groceries,185.0,W,H,28,2
+Groceries,228.04,W,H,7,2
 Birthday Gift,100.0,O,M,12,2
+Groceries,234.45,W,H,14,2
+Netflix,15.99,M,L,15,2
 Car Insurance,200.0,M,H,15,2
+Groceries,193.21,W,H,21,2
+Groceries,250.17,W,H,28,2
 Rent,1500.0,M,H,1,3
-Electricity,125.0,M,H,5,3
+Gym Membership,50.0,M,M,1,3
+Electricity,133.3,M,H,5,3
 Internet,60.0,M,M,5,3
 Phone Bill,45.0,M,M,6,3
+Groceries,163.65,W,H,7,3
+Groceries,163.74,W,H,14,3
 Netflix,15.99,M,L,15,3
-Gym Membership,50.0,M,M,1,3
-Groceries,215.0,W,H,7,3
-Groceries,190.0,W,H,14,3
-Groceries,200.0,W,H,21,3
-Groceries,195.0,W,H,28,3
 Car Maintenance,300.0,O,H,18,3
+Groceries,170.99,W,H,21,3
 Dentist Appointment,150.0,O,H,22,3
+Groceries,184.23,W,H,28,3
 Rent,1500.0,M,H,1,4
-Electricity,110.0,M,H,5,4
+Gym Membership,50.0,M,M,1,4
+Electricity,117.28,M,H,5,4
 Internet,60.0,M,M,5,4
 Phone Bill,45.0,M,M,6,4
-Netflix,15.99,M,L,15,4
-Gym Membership,50.0,M,M,1,4
-Groceries,205.0,W,H,7,4
-Groceries,195.0,W,H,14,4
-Groceries,210.0,W,H,21,4
-Groceries,200.0,W,H,28,4
+Groceries,194.18,W,H,7,4
 Spring Clothing,250.0,O,M,10,4
+Groceries,165.84,W,H,14,4
+Netflix,15.99,M,L,15,4
+Groceries,175.0,W,H,21,4
+Groceries,179.46,W,H,28,4
 Rent,1500.0,M,H,1,5
-Electricity,105.0,M,H,5,5
+Gym Membership,50.0,M,M,1,5
+Electricity,118.24,M,H,5,5
 Internet,60.0,M,M,5,5
 Phone Bill,45.0,M,M,6,5
-Netflix,15.99,M,L,15,5
-Gym Membership,50.0,M,M,1,5
-Groceries,195.0,W,H,7,5
-Groceries,205.0,W,H,14,5
-Groceries,200.0,W,H,21,5
-Groceries,190.0,W,H,28,5
-Home Repairs,400.0,O,H,20,5
+Groceries,199.09,W,H,7,5
 Mother's Day Gift,75.0,O,M,8,5
+Groceries,217.96,W,H,14,5
+Netflix,15.99,M,L,15,5
+Home Repairs,400.0,O,H,20,5
+Groceries,222.66,W,H,21,5
+Groceries,189.9,W,H,28,5
 Rent,1500.0,M,H,1,6
-Electricity,130.0,M,H,5,6
+Gym Membership,50.0,M,M,1,6
+Electricity,124.3,M,H,5,6
 Internet,60.0,M,M,5,6
 Phone Bill,45.0,M,M,6,6
+Groceries,154.13,W,H,7,6
+Groceries,207.16,W,H,14,6
 Netflix,15.99,M,L,15,6
-Gym Membership,50.0,M,M,1,6
-Groceries,210.0,W,H,7,6
-Groceries,200.0,W,H,14,6
-Groceries,215.0,W,H,21,6
-Groceries,195.0,W,H,28,6
+Groceries,208.17,W,H,21,6
 Summer Vacation,800.0,O,M,25,6
+Groceries,198.74,W,H,28,6
 Rent,1500.0,M,H,1,7
-Electricity,150.0,M,H,5,7
+Gym Membership,50.0,M,M,1,7
+Electricity,112.18,M,H,5,7
 Internet,60.0,M,M,5,7
 Phone Bill,45.0,M,M,6,7
-Netflix,15.99,M,L,15,7
-Gym Membership,50.0,M,M,1,7
-Groceries,200.0,W,H,7,7
-Groceries,210.0,W,H,14,7
-Groceries,205.0,W,H,21,7
-Groceries,195.0,W,H,28,7
+Groceries,186.91,W,H,7,7
 New Phone,700.0,O,M,12,7
+Groceries,172.27,W,H,14,7
+Netflix,15.99,M,L,15,7
+Groceries,153.18,W,H,21,7
+Groceries,175.57,W,H,28,7
 Rent,1500.0,M,H,1,8
-Electricity,145.0,M,H,5,8
+Gym Membership,50.0,M,M,1,8
+Electricity,101.38,M,H,5,8
 Internet,60.0,M,M,5,8
 Phone Bill,45.0,M,M,6,8
+Groceries,210.09,W,H,7,8
+Groceries,234.31,W,H,14,8
 Netflix,15.99,M,L,15,8
-Gym Membership,50.0,M,M,1,8
-Groceries,215.0,W,H,7,8
-Groceries,205.0,W,H,14,8
-Groceries,210.0,W,H,21,8
-Groceries,200.0,W,H,28,8
 Back to School Shopping,300.0,O,M,20,8
+Groceries,213.26,W,H,21,8
+Groceries,225.76,W,H,28,8
 Rent,1500.0,M,H,1,9
-Electricity,120.0,M,H,5,9
+Gym Membership,50.0,M,M,1,9
+Electricity,121.87,M,H,5,9
 Internet,60.0,M,M,5,9
 Phone Bill,45.0,M,M,6,9
+Groceries,209.27,W,H,7,9
+Groceries,197.6,W,H,14,9
 Netflix,15.99,M,L,15,9
-Gym Membership,50.0,M,M,1,9
-Groceries,195.0,W,H,7,9
-Groceries,200.0,W,H,14,9
-Groceries,205.0,W,H,21,9
-Groceries,190.0,W,H,28,9
 Car Registration,150.0,O,H,15,9
+Groceries,207.46,W,H,21,9
+Groceries,204.78,W,H,28,9
 Rent,1500.0,M,H,1,10
-Electricity,110.0,M,H,5,10
+Gym Membership,50.0,M,M,1,10
+Electricity,123.92,M,H,5,10
 Internet,60.0,M,M,5,10
 Phone Bill,45.0,M,M,6,10
+Groceries,200.62,W,H,7,10
+Groceries,207.07,W,H,14,10
 Netflix,15.99,M,L,15,10
-Gym Membership,50.0,M,M,1,10
-Groceries,210.0,W,H,7,10
-Groceries,205.0,W,H,14,10
-Groceries,200.0,W,H,21,10
-Groceries,215.0,W,H,28,10
-Halloween Costume,80.0,O,L,25,10
 Winter Coat,200.0,O,M,18,10
+Groceries,198.03,W,H,21,10
+Halloween Costume,80.0,O,L,25,10
+Groceries,214.83,W,H,28,10
 Rent,1500.0,M,H,1,11
-Electricity,115.0,M,H,5,11
+Gym Membership,50.0,M,M,1,11
+Electricity,115.55,M,H,5,11
 Internet,60.0,M,M,5,11
 Phone Bill,45.0,M,M,6,11
+Groceries,206.01,W,H,7,11
+Groceries,177.69,W,H,14,11
 Netflix,15.99,M,L,15,11
-Gym Membership,50.0,M,M,1,11
-Groceries,220.0,W,H,7,11
-Groceries,215.0,W,H,14,11
-Groceries,225.0,W,H,21,11
-Groceries,230.0,W,H,28,11
+Groceries,173.14,W,H,21,11
 Thanksgiving Dinner,150.0,O,M,23,11
+Groceries,188.84,W,H,28,11
 Rent,1500.0,M,H,1,12
-Electricity,125.0,M,H,5,12
+Gym Membership,50.0,M,M,1,12
+Electricity,105.64,M,H,5,12
 Internet,60.0,M,M,5,12
 Phone Bill,45.0,M,M,6,12
+Groceries,192.6,W,H,7,12
+Groceries,247.35,W,H,14,12
 Netflix,15.99,M,L,15,12
-Gym Membership,50.0,M,M,1,12
-Groceries,225.0,W,H,7,12
-Groceries,230.0,W,H,14,12
-Groceries,235.0,W,H,21,12
-Groceries,240.0,W,H,28,12
 Christmas Gifts,500.0,O,M,20,12
+Groceries,234.47,W,H,21,12
+Groceries,200.05,W,H,28,12
 New Year's Party,200.0,O,L,28,12
-Secret Juice,1.2,O,L,2,2
