@@ -27,7 +27,6 @@ def email_sender(receiver):
     </body>
 </html>
 """
-    
     em.add_alternative(html_content, subtype="html")
 
     data = ssl.create_default_context()
