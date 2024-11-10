@@ -162,42 +162,42 @@ class ExpenseTracker:
         
         return heatmap_data, time_periods
 
-def create_month_calendar(tracker, month):
-    days = list(range(1, 29))
-    weeks = [days[i:i + 7] for i in range(0, 28, 7)]
-    
-    # Get month's expenses
-    month_data = tracker.get_month_expenses(month)
-    
-    # Headers
-    cols = st.columns(7)
-    for i, day in enumerate(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']):
-        cols[i].markdown(f"**{day}**")
-    
-    # Calendar grid
-    for week in weeks:
+    def create_month_calendar(self, tracker, month):
+        days = list(range(1, 29))
+        weeks = [days[i:i + 7] for i in range(0, 28, 7)]
+        
+        # Get month's expenses
+        month_data = tracker.get_month_expenses(month)
+        
+        # Headers
         cols = st.columns(7)
-        for i, day in enumerate(week):
-            with cols[i]:
-                day_expenses = month_data[month_data['day'] == day]
-                total = day_expenses['cost'].sum()
-                
-                # Get priority indicator
-                if not day_expenses.empty:
-                    if 'H' in day_expenses['priority'].values:
-                        indicator = "🔴"
-                    elif 'M' in day_expenses['priority'].values:
-                        indicator = "🟡"
+        for i, day in enumerate(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']):
+            cols[i].markdown(f"**{day}**")
+        
+        # Calendar grid
+        for week in weeks:
+            cols = st.columns(7)
+            for i, day in enumerate(week):
+                with cols[i]:
+                    day_expenses = month_data[month_data['day'] == day]
+                    total = day_expenses['cost'].sum()
+                    
+                    # Get priority indicator
+                    if not day_expenses.empty:
+                        if 'H' in day_expenses['priority'].values:
+                            indicator = "🔴"
+                        elif 'M' in day_expenses['priority'].values:
+                            indicator = "🟡"
+                        else:
+                            indicator = "🟢"
+                        display_text = f"{day}\n£{total:.0f}"
                     else:
-                        indicator = "🟢"
-                    display_text = f"{day}\n£{total:.0f}"
-                else:
-                    indicator = "⚪"
-                    display_text = str(day)
-                
-                if st.button(f"{indicator} {display_text}", key=f"day_{month}_{day}"):
-                    st.session_state.selected_day = day
-                    st.session_state.selected_month = month
+                        indicator = "⚪"
+                        display_text = str(day)
+                    
+                    if st.button(f"{indicator} {display_text}", key=f"day_{month}_{day}"):
+                        st.session_state.selected_day = day
+                        st.session_state.selected_month = month
 
 def main():
     st.set_page_config(page_title="Monthly Expense Tracker", layout="wide")
@@ -205,6 +205,12 @@ def main():
     
     tracker = ExpenseTracker()
     popularday, chance = tracker.most_possible_day()
+    
+    # Initialize session state for deletion workflow
+    if 'delete_mode' not in st.session_state:
+        st.session_state.delete_mode = False
+    if 'expense_to_delete' not in st.session_state:
+        st.session_state.expense_to_delete = None
     
     # Month selection
     selected_month = st.selectbox(
@@ -219,7 +225,7 @@ def main():
     
     with col1:
         st.subheader(f"📅 {calendar.month_name[selected_month]}")
-        create_month_calendar(tracker, selected_month)
+        tracker.create_month_calendar(tracker, selected_month)
         
         # Add line graph analysis
         st.subheader("Daily Expense Trend")
@@ -293,10 +299,12 @@ def main():
                         day, selected_month
                     )
                     st.success("Expense added!")
+                    st.rerun()
                 else:
                     st.error("Please fill all fields")
+        pass
     
-    # Show selected day's expenses
+    # Show selected day's expenses with improved deletion handling
     if hasattr(st.session_state, 'selected_day'):
         day = st.session_state.selected_day
         month = st.session_state.selected_month
@@ -319,14 +327,35 @@ def main():
             
             st.table(display_df[['name', 'cost', 'priority', 'rate']])
             
-            # Delete functionality
-            if st.button("Remove an expense"):
-                expense = st.selectbox("Select expense to remove",
-                                     day_expenses['name'].tolist())
-                if expense and st.button("Confirm Delete"):
-                    tracker.remove_expense(expense, day, month)
-                    st.success("Expense removed!")
-                    st.experimental_rerun()
+            # Improved delete functionality
+            if not st.session_state.delete_mode:
+                if st.button("Remove an expense", key="start_delete"):
+                    st.session_state.delete_mode = True
+            
+            if st.session_state.delete_mode:
+                st.session_state.expense_to_delete = st.selectbox(
+                    "Select expense to remove",
+                    day_expenses['name'].tolist(),
+                    key="delete_selector"
+                )
+            
+                col1, col2 = st.columns([1, 1])
+                with col1:
+                    if st.button("Confirm Delete", key="confirm_delete"):
+                        tracker.remove_expense(
+                            st.session_state.expense_to_delete,
+                            day,
+                            month
+                        )
+                        st.session_state.delete_mode = False
+                        st.session_state.expense_to_delete = None
+                        st.success("Expense removed!")
+                        st.rerun()
+                
+                with col2:
+                    if st.button("Cancel", key="cancel_delete"):
+                        st.session_state.delete_mode = False
+                        st.session_state.expense_to_delete = None
         else:
             st.info("No expenses for this day")
     

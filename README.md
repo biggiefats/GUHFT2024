@@ -14,5 +14,5 @@ to their individual needs, habits and goals.
 ### Required Technology
 - `Python 3.12 or newer`
 - `The Pandas, Scikit-Learn and Streamlit libraries`
-
-To run the program, type into the terminal local to a PC or IDE: `streamlit run app.py` or `python -m streamlit run app.py`
+- To run the program, type into the terminal local to a PC or IDE: `streamlit run app.py` or `python -m git streamlit run app.py`
+- The program should then load up onto your default web browser
