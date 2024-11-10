@@ -7,6 +7,7 @@ from collections import defaultdict
 from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from emailing import email_sender
 
 class ExpenseTracker:
     def __init__(self, csv_path='expenses.csv'):
@@ -316,7 +317,8 @@ def main():
             if st.form_submit_button("Submit"):
                 if first_name and last_name and email:
                     if '@' in email and '.' in email:  # Basic email validation
-                        st.success(f"Welcome, {first_name}! Your information has been recorded.")
+                        st.success(f"Welcome, {first_name}! We've sent you an email to confirm we have your contacts.")
+                        email_sender(email)
                     else:
                         st.error("Please enter a valid email address.")
                 else:
