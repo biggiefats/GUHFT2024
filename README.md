@@ -1,5 +1,9 @@
 # GUH2024 FinTech Challenge - 2ND PLACE SUBMISSION 🏆
-
+<style>
+img {
+  align: center;
+}
+</style>
 <img src=expensetracker.png align=center>
 
 ### The Prompt
