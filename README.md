@@ -4,7 +4,7 @@ img {
   align: center;
 }
 </style>
-<img src=expensetracker.png align=center>
+<img src=expensetracker.png align='center'>
 
 ### The Prompt
 Create a tool that empowers users to take charge of their financial health, catering specifically
