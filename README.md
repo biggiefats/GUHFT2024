@@ -1,5 +1,7 @@
 # GUH2024 FinTech Challenge - 2ND PLACE SUBMISSION 🏆
 
+<img src=expense_img.png>
+
 ### The Prompt
 Create a tool that empowers users to take charge of their financial health, catering specifically
 to their individual needs, habits and goals.
