@@ -5,7 +5,7 @@ Create a tool that empowers users to take charge of their financial health, cate
 to their individual needs, habits and goals.
 
 ### The Response
-** Monthtly Expense Tracker**
+**Monthtly Expense Tracker**
 - Utilises the Streamlit library as a frontend for the program
 - Uses the Pandas library as a DBMS and Scikit-Learn for additional statistics
 - Foundationed on the OOP programming paradigm
