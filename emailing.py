@@ -5,8 +5,8 @@ import smtplib
 
 
 def email_sender(receiver):
-    sender = "muhammadbobat99@gmail.com"
-    email_pass = "nclurdapgiqcssjw"
+    sender = "EMAIL"
+    email_pass = "PASSWORD"
 
     # subject = "File of passwords"
     subject = "Weekly Finance Report sign up"
